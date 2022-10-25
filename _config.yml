@@ -112,6 +112,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
+destination: docs/
 # =======================================#
 # -----JEKYLL SCHOLAR SETTINGS-----------#
 #========================================#
