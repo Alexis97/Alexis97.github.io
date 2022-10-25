@@ -9,12 +9,17 @@ description: Dong Xiao, a.k.a Chinese Phoenix Flute
 
 ## My Practice
 
-<div class="ProjectContainer">
-    <div class="gallery">
+<div >
         {% for item in site.data.showcase %}
         {% if item.domain == "dongxiao" %}
         <div>
         <h3> {{item.title}} </h3>
+        {% if item.date %}
+            <p class="meta"><small>{{item.date | date: '%B %d, %Y'}}</small></p>
+        {% endif %}
+        {% if item.intro %}
+            <p class="meta"> {{item.intro}} </p>
+        {% endif %}
         <p align="center">
         <img src="{{item.image_url}}" alt={{item.name}}/>
         <br>
@@ -28,10 +33,10 @@ description: Dong Xiao, a.k.a Chinese Phoenix Flute
         </audio>
         </p>
         </div>
+        <br>
         {% endif %}
         {% endfor %}
-      
-    </div>
 </div>
+
 
 

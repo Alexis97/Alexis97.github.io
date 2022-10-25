@@ -3,14 +3,19 @@ layout: post
 title: My Songs
 description: Some covered songs I recorded
 ---
-I love singing during rest. Here are some recordings I covered.
+I love singing during rest. Here are some songs I covered.
 
-<div class="ProjectContainer">
-    <div class="gallery">
+<div >
         {% for item in site.data.showcase %}
         {% if item.domain == "songs" %}
         <div>
         <h3> {{item.title}} </h3>
+        {% if item.date %}
+            <p class="meta"><small>{{item.date | date: '%B %d, %Y'}}</small></p>
+        {% endif %}
+        {% if item.intro %}
+            <p class="meta"> {{item.intro}} </p>
+        {% endif %}
         <p align="center">
         <img src="{{item.image_url}}" alt={{item.name}}/>
         <br>
@@ -24,8 +29,7 @@ I love singing during rest. Here are some recordings I covered.
         </audio>
         </p>
         </div>
+        <br>
         {% endif %}
         {% endfor %}
-      
-    </div>
 </div>
