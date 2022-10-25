@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/Alexis97.github.io/assets/css/main.css">
+
+        <h1 class="post-headline">Shimian Zhang</h1>
+        <h3 class="post-description">Ph.D Student | LPAC | Penn State</h3>
+
+        <div class="links scroll">
+        <a href="/Alexis97.github.io/">Home</a>
+        <!-- <a href="/Alexis97.github.io/projects/">Projects</a> -->
+        <a href="/Alexis97.github.io/showcases/">Showcases</a>
+        <a href="/Alexis97.github.io/blog/">Blog</a>
+        
+        <a href="/Alexis97.github.io/archive/">Archive</a>
+</div>
+
+
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>How to configure an environment for URPD research | Shimian Zhang</title>
+<meta name="generator" content="Jekyll v4.3.0" />
+<meta property="og:title" content="How to configure an environment for URPD research" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Due to code consistency reasons, the URPD code relies on a cpp module compiled by OpenCV 3, and the python scripts by OpenCV4. This makes the environment configuration of URPD code much more complex. This blog will show you how to configure such an environment for URPD research purpose. The experience can also benefit other configuration tasks relies on OpenCV." />
+<meta property="og:description" content="Due to code consistency reasons, the URPD code relies on a cpp module compiled by OpenCV 3, and the python scripts by OpenCV4. This makes the environment configuration of URPD code much more complex. This blog will show you how to configure such an environment for URPD research purpose. The experience can also benefit other configuration tasks relies on OpenCV." />
+<link rel="canonical" href="http://localhost:4000/Alexis97.github.io/blog/2022/howtoconfig/" />
+<meta property="og:url" content="http://localhost:4000/Alexis97.github.io/blog/2022/howtoconfig/" />
+<meta property="og:site_name" content="Shimian Zhang" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-06-13T00:00:00-04:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="How to configure an environment for URPD research" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2022-06-13T00:00:00-04:00","datePublished":"2022-06-13T00:00:00-04:00","description":"Due to code consistency reasons, the URPD code relies on a cpp module compiled by OpenCV 3, and the python scripts by OpenCV4. This makes the environment configuration of URPD code much more complex. This blog will show you how to configure such an environment for URPD research purpose. The experience can also benefit other configuration tasks relies on OpenCV.","headline":"How to configure an environment for URPD research","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/Alexis97.github.io/blog/2022/howtoconfig/"},"url":"http://localhost:4000/Alexis97.github.io/blog/2022/howtoconfig/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+        <!-- Generated using https://favicon.io/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?">
+<link rel="manifest" href=site.webmanifest">
+
+
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
+</script>
+
+
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    </head>
+
+    <body>
+        <main>
+            <article>
+                <h1 class="post-headline">How to configure an environment for URPD research</h1>
+<p class="meta"><small>June 13, 2022</small></p>
+
+<p>Due to code consistency reasons, the URPD code relies on a cpp module compiled by OpenCV 3, and the python scripts by OpenCV4. This makes the environment configuration of URPD code much more complex. This blog will show you how to configure such an environment for URPD research purpose. The experience can also benefit other configuration tasks relies on OpenCV.</p>
+
+<p>Platform: WSL + VSCode + Docker
+Install libraries: OpenCV 3 &amp; contrib, Boost, Miniconda/Anaconda , Python OpenCV 4 &amp; contrib, etc.</p>
+
+<ul id="markdown-toc">
+  <li>
+<a href="#platform-setup" id="markdown-toc-platform-setup">Platform Setup</a>    <ul>
+      <li>
+<a href="#wsl" id="markdown-toc-wsl">WSL</a>        <ul>
+          <li><a href="#windows-os-version-pre-check" id="markdown-toc-windows-os-version-pre-check">Windows OS Version Pre-check</a></li>
+          <li><a href="#how-to-install" id="markdown-toc-how-to-install">How to install</a></li>
+          <li><a href="#memory-issue" id="markdown-toc-memory-issue">Memory Issue</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#vscode" id="markdown-toc-vscode">VSCode</a>        <ul>
+          <li><a href="#vscode-extension" id="markdown-toc-vscode-extension">VSCode Extension</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#docker" id="markdown-toc-docker">Docker</a>        <ul>
+          <li><a href="#docker-installation" id="markdown-toc-docker-installation">Docker Installation</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+<a href="#configure-the-environment" id="markdown-toc-configure-the-environment">Configure the Environment</a>    <ul>
+      <li><a href="#pull-the-docker-image-of-python" id="markdown-toc-pull-the-docker-image-of-python">Pull the Docker image of Python</a></li>
+      <li><a href="#start-the-container-with-a-volume" id="markdown-toc-start-the-container-with-a-volume">Start the container with a Volume</a></li>
+      <li><a href="#opencv3-installation-not-python-opencv" id="markdown-toc-opencv3-installation-not-python-opencv">OpenCV3 Installation (Not Python-OpenCV)</a></li>
+      <li><a href="#boost-installation" id="markdown-toc-boost-installation">Boost Installation</a></li>
+      <li><a href="#conda-installation-python-side" id="markdown-toc-conda-installation-python-side">Conda Installation (Python Side)</a></li>
+      <li><a href="#create-a-virtual-environment-optional" id="markdown-toc-create-a-virtual-environment-optional">Create a Virtual Environment (Optional)</a></li>
+      <li><a href="#python-libraries-installation" id="markdown-toc-python-libraries-installation">Python Libraries Installation</a></li>
+      <li><a href="#pytorch-installation-optional" id="markdown-toc-pytorch-installation-optional">Pytorch Installation (Optional)</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="platform-setup">Platform Setup</h2>
+<h3 id="wsl">WSL</h3>
+<h4 id="windows-os-version-pre-check">Windows OS Version Pre-check</h4>
+<p>Before installing WSL, make sure you have Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11. Otherwise, the installation will be much more complicated and unstable due to windows updates. You can follow the manually installation tutorial here: Manual installation steps for older versions of WSL | Microsoft Docs  Updating windows is recommended.</p>
+
+<h4 id="how-to-install">How to install</h4>
+<p>You can install everything you need to run Windows Subsystem for Linux (WSL) by entering this command in an administrator PowerShell or Windows Command Prompt and then restarting your machine. <code class="language-plaintext highlighter-rouge">wsl --install</code></p>
+
+<p>By default, the installed Linux distribution will be Ubuntu.</p>
+
+<h4 id="memory-issue">Memory Issue</h4>
+<p>WSL can easily consume all your RAM without control. Here is a blog reported such an issue and provided the solution how to release the memory: Taking Back Memory From Vmmem/WSL | BlogLogBlog</p>
+
+<p>We can configure limits on the memory, CPU, and swap size allocated to WSL 2 in a .wslconfig file. Advanced settings configuration in WSL | Microsoft Docs 
+Remark:</p>
+<ul>
+  <li>If the corresponding .wslconfig file doesn’t existed, we can create one.</li>
+</ul>
+
+<h3 id="vscode">VSCode</h3>
+<p>VSCode is a lightweight and powerful editor which integrated with WSL, Git and Docker nicely.</p>
+
+<p>You can download and install VSCode through this link: Download Visual Studio Code - Mac, Linux, Windows 
+You can find VSCode official document here: Documentation for Visual Studio Code</p>
+
+<h4 id="vscode-extension">VSCode Extension</h4>
+<p>Some recommended extensions which will be used in this article: 
+CMake, Docker, Python, Python Environment Manager, Remote-WSL</p>
+
+<h3 id="docker">Docker</h3>
+<p>With the help of Docker, we can pull an image from the Hub with pre-installed desired Python version and no worries about the dependencies. Moreover, after we configure such a complex environment in a container, we can build an image based on this container. This makes other collaborators much easier to contribute to the code, instead of spending time on re-configuring environment on their local machines.</p>
+
+<h4 id="docker-installation">Docker Installation</h4>
+<p>Since we have installed WSL on windows system, we can either install Docker Engine in WSL Ubuntu system, or install Docker Desktop in Windows with an interactive surface.</p>
+
+<ul>
+  <li>Install Docker-Engine in WSL Ubuntu system: Install Docker Engine on Ubuntu</li>
+  <li>Install Docker-desktop in Windows (WSL is required): Install Docker Desktop on Windows</li>
+</ul>
+
+<p>Some Useful Docker Commands</p>
+<ul>
+  <li>Build an image from a Dockerfile: <code class="language-plaintext highlighter-rouge">docker build [OPTIONS] PATH | URL | -</code>
+</li>
+  <li>List the docker images: <code class="language-plaintext highlighter-rouge">docker images [OPTIONS] [REPOSITORY[:TAG]]</code>
+</li>
+  <li>List the docker containers: <code class="language-plaintext highlighter-rouge">docker ps [OPTIONS]</code>
+</li>
+  <li>Run a command in a new container:	<code class="language-plaintext highlighter-rouge">docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</code>
+    <ul>
+      <li>Usually run a docker in backend, with interactive: <code class="language-plaintext highlighter-rouge">-it</code>
+</li>
+    </ul>
+  </li>
+  <li>Run a command in a running container: <code class="language-plaintext highlighter-rouge">docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</code>
+</li>
+  <li>Create a new image from a container’s changes: <code class="language-plaintext highlighter-rouge">docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]</code>
+</li>
+  <li>Save one or more images to a tar archive (streamed to STDOUT by default): <code class="language-plaintext highlighter-rouge">docker save [OPTIONS] IMAGE [IMAGE...]</code>
+  Example
+  <code class="language-plaintext highlighter-rouge">docker save busybox &gt; busybox.tar</code>
+</li>
+  <li>See more about docker commands: <a href="https://docs.docker.com/reference/" target="_blank" rel="noopener noreferrer">Reference documentation</a>
+</li>
+</ul>
+
+<h2 id="configure-the-environment">Configure the Environment</h2>
+
+<ol>
+  <li>
+    <h3 id="pull-the-docker-image-of-python">Pull the Docker image of Python</h3>
+    <p>We start the environment configuration with a prebuild Python image. 
+ Hub link: <a href="https://hub.docker.com/_/python" target="_blank" rel="noopener noreferrer">Python - Official Image | Docker Hub</a>
+ Pull command (latest tag): <code class="language-plaintext highlighter-rouge">docker pull python</code>
+ After pulling this image, we can create a container based on this image.</p>
+  </li>
+  <li>
+    <h3 id="start-the-container-with-a-volume">Start the container with a Volume</h3>
+    <p>It is worthy to notice that a docker container shall be kept small to avoid the image growing incredibly large. However, in research, we are not just configuring an environment, but also run multiple experiments and generates a lots of result files. If these files are generated inside the container, it will make the image too large to be easily share among contributors or to the other users.</p>
+
+    <p>To resolve this problem, we can use <a href="https://docs.docker.com/storage/volumes/" target="_blank" rel="noopener noreferrer">Volume</a>, which is a preferred mechanism for persisting data generated by and used by Docker containers. It works similarly to bind mounts on OS, but has the advantage that fully controlled by Docker. By creating a Volume, we can easily bind a local external directory to a container, and it can detach the container after stopped.</p>
+
+    <p>In this article, we create a container called RP-Test from the Python image, and bind the local directory <code class="language-plaintext highlighter-rouge">E:</code> to container directory <code class="language-plaintext highlighter-rouge">/mnt/e</code></p>
+
+    <p>The Docker-Desktop makes the creation of containers very simple, and can check the status of each container intuitively. For example, by clicking the corresponding running container, we can check whether the volumes are mounted correctly.</p>
+  </li>
+  <li>
+    <h3 id="opencv3-installation-not-python-opencv">OpenCV3 Installation (Not Python-OpenCV)</h3>
+
+    <p>Here we first install the OpenCV 3 for cpp module usage. The installation of OpenCV 3.4.11 is mostly follow this official doc:<a href="https://docs.opencv.org/3.4.11/d7/d9f/tutorial_linux_install.html" target="_blank" rel="noopener noreferrer">OpenCV: Installation in Linux</a></p>
+
+    <p>Some remarks:</p>
+    <ul>
+      <li>After cloning the opencv repo, do not forget to switch branch to the corresponding release version (i.e. 3.4.11) by: <code class="language-plaintext highlighter-rouge">git checkout tags/3.4.11.</code> Otherwise, OpenCV 4 version will be installed.</li>
+      <li>To compile OpenCV with contrib packages, the cmake commend shall be modified like this: <code class="language-plaintext highlighter-rouge">cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local OPENCV_EXTRA_MODULES_PATH=/home/tools/opencv_contrib/modules ..</code>
+ Here <code class="language-plaintext highlighter-rouge">OPENCV_EXTRA_MODULES_PATH</code> shall be modified to your opencv contrib folder directory.</li>
+      <li>After build by make -jn, do not forget to install libraries by running make install in the build directory. Otherwise, CMake cannot find OpenCV libraries automatically.</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="boost-installation">Boost Installation</h3>
+    <p>The installation of boost can follow this official doc: <a href="https://www.boost.org/doc/libs/1_79_0/more/getting_started/unix-variants.html" target="_blank" rel="noopener noreferrer">Boost Getting Started on Unix Variants - 1.79.0</a>
+ If you need to install a specific version of boost, please select the corresponding version documents.</p>
+  </li>
+  <li>
+    <h3 id="conda-installation-python-side">Conda Installation (Python Side)</h3>
+    <p>OpenCV 3 and Boost are served for the cpp module compiling. By finishing the above steps, we can start installing the Python side packages &amp; libraries.</p>
+
+    <p>We choose to use Miniconda to control the Python packages &amp; virtual environments. The installation of Miniconda can follow this official doc: <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html" target="_blank" rel="noopener noreferrer">Installing on Linux — conda 4.13.0.post16+23ba63de documentation</a></p>
+  </li>
+  <li>
+    <h3 id="create-a-virtual-environment-optional">Create a Virtual Environment (Optional)</h3>
+    <p>To better arrange the Python packages for different code purpose, creating a virtual environment is a good choice. A virtual environment in conda can be easily created by such a commend: <code class="language-plaintext highlighter-rouge">conda create --name myenv python=specified_version</code></p>
+
+    <p>In VSCode, by the Python Environment Manager extension, we can easily choose which environment to use, and see which packages are installed.</p>
+  </li>
+  <li>
+    <h3 id="python-libraries-installation">Python Libraries Installation</h3>
+
+    <p>Here we listed the installation commend for some python libraries used in our project. <code class="language-plaintext highlighter-rouge">pip</code> is recommended.</p>
+    <ul>
+      <li>Python-OpenCV (cpu-only) full package (contains both main modules and contrib/extra modules): <code class="language-plaintext highlighter-rouge">pip install opencv-contrib-python</code>
+</li>
+      <li>IPython Kernel for Jupyter: <code class="language-plaintext highlighter-rouge">pip install ipykernel</code>
+</li>
+      <li>…</li>
+    </ul>
+  </li>
+  <li>
+    <h3 id="pytorch-installation-optional">Pytorch Installation (Optional)</h3>
+
+    <ul>
+      <li>Install Pytorch with CPU only version by conda: <code class="language-plaintext highlighter-rouge">conda install pytorch torchvision torchaudio cpuonly -c pytorch</code>
+</li>
+    </ul>
+  </li>
+</ol>
+
+
+
+<!-- Comments only for posts -->
+
+    
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> © Shimian Zhang 2022
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+                    Last updated on 25 October 2022
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons">
+<a title="" class="social-button email" itemprop="email" href="mailto:%73%76%7A%35%33%30%33@%70%73%75.%65%64%75" target="_blank">
+<i class="far fa-envelope"></i>
+</a><a title="" class="social-button github" href="https://www.github.com/Alexis97" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-github"></i>
+</a>
+</div>
+
+
+        </footer>
+
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
+<script>
+var galite = galite || {};
+galite.UA = '';
+</script>
+
+    </body>
+
+</html>

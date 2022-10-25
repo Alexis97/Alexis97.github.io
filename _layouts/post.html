@@ -1,22 +1,14 @@
 ---
-layout: page
+layout: default
 ---
-{% assign theme = site.data.themes[site.ui_theme] %}
+<h1 class="post-headline">{{page.title}}</h1>
+<p class="meta"><small>{{page.date | date: '%B %d, %Y'}}</small></p>
 
+{{content}}
 
-
-<div class="blogcard {{ page.card }} mb-4 mt-4" style="width: 100%;">
-  <div class="card-body">
-    <h5 class="card-title text-center" style="font-size:{{ theme.post-tag-size }};">{{ page.tag }}</h5>
-    <h5 class="card-title text-center" style="font-size:{{ theme.post-title-size }};font-weight:{{ theme.post-font-weight }};">{{ page.title }}</h5>
-    <h6 class="card-subtitle text-center" style="font-size:{{ theme.post-author-size }};">Author: {{page.author}} | Published {{page.date}}</h6>
-    {% include social-cards-copy.html %}
-  </div>
-</div>
-
-<div class="card border-0" style="width: 100%;">
-  <div class="card-body">
-    <p class="card-text">{{ content | markdownify }}</p>
-  </div>
-</div>
-
+<!-- Comments only for posts -->
+{% if page.path contains '_posts' %}
+    {% if site.disqus-shortname %}
+        {% include disqus.html %}
+    {% endif %}
+{% endif %}

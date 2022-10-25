@@ -1,47 +1,92 @@
-<!-- Displays Social Media Icons based on _config.yml settings -->
-{{ if site.twitter }}
-<span style="color: Black;">
-     {% if site.twitter %}
-        <a class="social-link" href="https://twitter.com/{{ site.twitter }}">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-        </span>
-    {% endif %}
-    {% if site.github %}
-        <a href="https://github.com/{{ site.github }}">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-github-square fa-lg"></i></a>
-        </span>
-    {% endif %}
-    {% if site.linkedin %}
-        <a href="https://www.linkedin.com/in/{{ site.linkedin }}">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-linkedin fa-lg"></i></a>
-        </span>
-    {% endif %}
-    {% if site.codepen %}
-        <a href="https://codepen.io/{{ site.codepen }}">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-codepen fa-lg"></i></a>
-        </span>
-    {% endif %}
-    {% if site.stackoverflow %}
-        <a href="https://stackoverflow.com/users/story/{{ site.stackoverflow }}">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-stack-overflow fa-lg"></i></a>
-        </span>
-    {% endif %}
-    {% if site.medium %}
-        <a href="https://{{ site.medium }}.medium.com/">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-medium fa-lg"></i></a>
-        </span>
-    {% endif %}
-    {% if site.keybase %}
-        <a href="https://keybase.io/{{ site.keybase }}">
-        <span style="color: {{ theme.social-color-footer }};">
-            <i class="fab fa-keybase"></i></a>
-        </span>
-    {% endif %} 
-    <i> &nbsp;&nbsp; </i>
-</span>
+<div class="rounded-social-buttons">
+
+{%- if site.email -%}
+<a title="{{ _locale_string_email }}"
+class="social-button email" itemprop="email"
+href="mailto:{{ site.email | encode_email }}" target="_blank">
+<i class="far fa-envelope"></i>
+</a>
+{%- endif -%}
+
+{%- if site.linkedin -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'LinkedIn' }}"
+class="social-button linkedin"
+href="https://www.linkedin.com/in/{{ site.linkedin }}" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-linkedin"></i>
+</a>
+{%- endif -%}
+
+{%- if site.github -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'GitHub' }}"
+class="social-button github"
+href="https://www.github.com/{{ site.github }}" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-github"></i>
+</a>
+{%- endif -%}
+
+{%- if site.researchgate -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'ResearchGate' }}"
+class="social-button researchgate"
+href="https://www.researchgate.net/profile/{{ site.researchgate }}" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-researchgate"></i>
+</a>
+{%- endif -%}
+
+{%- if site.orcid -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'Orcid' }}"
+class="social-button orcid"
+href="https://orcid.org/{{ site.orcid }}" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-orcid"></i>
+</a>
+{%- endif -%}
+
+{%- if site.twitter -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'Twitter' }}"
+class="social-button twitter"
+href="https://www.twitter.com/{{ site.twitter }}" itemprop="sameAs"
+target="_blank">
+<i class="fab fa-twitter"></i>
+</a>
+{%- endif -%}
+
+{%- if site.facebook -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'Facebook' }}"
+class="social-button facebook" itemprop="sameAs"
+href="https://www.facebook.com/{{ site.facebook }}"
+target="_blank">
+<i class="fab fa-facebook-f"></i>
+</a>
+{%- endif -%}
+
+{%- if site.quora -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'Quora' }}"
+class="social-button quora" itemprop="sameAs"
+href="https://www.quora.com/profile/{{ site.quora }}"
+target="_blank">
+<i class="fab fa-quora"></i>
+</a>
+{%- endif -%}
+
+{%- if site.instagram -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'Instagram' }}"
+class="social-button instagram" itemprop="sameAs"
+href="https://www.instagram.com/{{ site.instagram }}"
+target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
+{%- endif -%}
+
+{%- if site.stackoverflow -%}
+<a title="{{ _locale_string_follow | replace: '[NAME]', 'Stackoverflow' }}"
+class="social-button stackoverflow" itemprop="sameAs"
+href="https://stackoverflow.com/users/{{ site.stackoverflow }}"
+target="_blank">
+<i class="fab fa-brands fa-stack-overflow"></i>
+</a>
+{%- endif -%}
+
+</div>

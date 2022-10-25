@@ -1,807 +1,116 @@
 <!DOCTYPE html>
-
 <html>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--
-  The above 2 meta tags *must* come first in the <head>
-  to consistently ensure proper document rendering.
-  Any other head element should come *after* these tags.
- -->
-<title>Dumbarton</title>
-<!-- Set the base URL for all relative URLs within the document -->
-<base href="https://dumbarton.netlify.app/">
 
-<!--
-  Allows control over where resources are loaded from.
-  Place as early in the <head> as possible, as the tag  
-  only applies to resources that are declared after it.
--->
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <link rel="stylesheet" href="/Alexis97.github.io/assets/css/main.css">
 
-<!-- Short description of the document (limit to 150 characters) -->
-<!-- This content *may* be used as a part of search engine results. -->
-<meta name="description" content="a minimalistic jekyll theme for academics">
+        <h1 class="post-headline">Shimian Zhang</h1>
+        <h3 class="post-description">Ph.D Student | LPAC | Penn State</h3>
 
-<!-- Control the behavior of search engine crawling and indexing -->
-<meta name="robots" content="index,follow"><!-- All Search Engines -->
-<meta name="googlebot" content="index,follow"><!-- Google Specific -->
-
-<!-- Verify website ownership -->
-<meta name="google-site-verification" content=""><!-- Google Search Console -->
-<meta name="yandex-verification" content=""><!-- Yandex Webmasters -->
-<meta name="msvalidate.01" content=""><!-- Bing Webmaster Center -->
-<meta name="alexaVerifyID" content=""><!-- Alexa Console -->
-<meta name="p:domain_verify" content=""><!-- Pinterest Console-->
-<meta name="norton-safeweb-site-verification" content=""><!-- Norton Safe Web -->
-
-<!-- Allows control over how referrer information is passed -->
-<meta name="referrer" content="no-referrer">
-
-<!-- Disable automatic detection and formatting of possible phone numbers -->
-<meta name="format-detection" content="telephone=true">
-
-<!-- Completely opt out of DNS prefetching by setting to "off" -->
-<meta http-equiv="x-dns-prefetch-control" content="on">
-
-<!-- Geo tags -->
-<!-- meta name="ICBM" content="latitude, longitude"-->
-<!-- meta name="geo.position" content="latitude;longitude"-->
-<!-- meta name="geo.region" content="country[-state]"><Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
-<!-- meta name="geo.placename" content="city/town"><eg. content="New York City" -->
-
-<!-- Link to an external CSS file -->
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Courgette&family=Lobster&family=Pacifico&family=Yellowtail&family=Noto+Sans+JP:wght@400;900&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="/css/main.css">
-<!-- BootStrap CDN --> 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-<script src="https://kit.fontawesome.com/32a2b2a489.js" crossorigin="anonymous"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
-
-<!--  GIT TALK CDN  for comment system -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
-
-
-<!-- Provides information about an author or another person -->
-<link rel="me" href="mailto:developer.tbutler@gmail.com">
-<link rel="me" href="sms:+">
-
-<!-- Open Search -->
-<!-- link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title" -->
-
-<!-- Feeds -->
-<!-- link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS" -->
-<!-- link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3" -->
-
-<!-- For IE 10 and below -->
-<!-- Place favicon.ico in the root directory - no tag necessary -->
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
-<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
-
-<meta property="fb:app_id" content="">
-<meta property="og:url" content="https://dumbarton.netlify.app/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dumbarton, a minimalistic jekyll theme for academics">
-<meta property="og:image" content="/assets/img/dumbarton.png">
-<meta property="og:image:alt" content="A minimalistic jekyll theme for academic">
-<meta property="og:description" content="a minimalistic jekyll theme for academics">
-<meta property="og:site_name" content="Dumbarton">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@tbutler0x90">
-<meta name="twitter:creator" content="@tbutler0x90">
-<meta name="twitter:url" content="https://dumbarton.netlify.app/">
-<meta name="twitter:title" content="a minimalistic jekyll theme for academics">
-<meta name="twitter:description" content="a minimalistic jekyll theme for academics">
-<meta name="twitter:image" content="/assets/img/dumbarton.png">
-<meta name="twitter:image:alt" content="A minimalistic jekyll theme for academic">
-
-<!-- Used for adding in-document CSS -->
-
-
-
-<!-- JavaScript & No-JavaScript tags -->
-
-<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
-<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
-<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/languages/go.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<!--
-<script>
-    $(document).ready(function() {
-        $(".toast").toast('show');
-    });
-</script> -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', ');
-</script>
-
-<noscript>
-  <!-- No JS alternative -->
-</noscript>
-  <body style="background-color:;">
-    
-<nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:Poppins;background-color:#10292e;">
-  <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#149f98;">Dumbarton</h4></a>
-  <button class="navbar-toggler text-black" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fas fa-caret-down"></i>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+        <div class="links scroll">
+        <a href="/Alexis97.github.io/">Home</a>
+        <!-- <a href="/Alexis97.github.io/projects/">Projects</a> -->
+        <a href="/Alexis97.github.io/showcases/">Showcases</a>
+        <a href="/Alexis97.github.io/blog/">Blog</a>
         
-              <li class="nav-item">
-                  <a href="about.html" class="nav-link" style="font-family:Poppins;color:#149f98;">About</a>
-              </li>
-        
-              <li class="nav-item">
-                  <a href="publications.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Publications</a>
-              </li>
-        
-              <li class="nav-item">
-                  <a href="blog.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Blog</a>
-              </li>
-        
-              <li class="nav-item">
-                  <a href="/assets/pdf/vitae.pdf" class="nav-link" style="font-family:Poppins;color:#149f98;">Vitae</a>
-              </li>
-        
-              <li class="nav-item">
-                  <a href="contact.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Contact</a>
-              </li>
-        
-    </ul>
-    <ul class="navbar-nav  justify-content-end">
-      <li class="nav-item">
-        
-<!-- Displays Social Media Icons based on _config.yml settings -->
-<span style="color:#CCCCCC;">
-    <i> &nbsp;&nbsp; </i>
-    
-        <a class="social-link" href="https://twitter.com/tbutler0x90">
-        <span style="color: #CCCCCC;">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-        </span>
-    
-    
-        <a href="https://github.com/tcbutler320">
-        <span style="color: #CCCCCC;">
-            <i class="fab fa-github-square fa-lg"></i></a>
-        </span>
-    
-    
-        <a href="https://www.linkedin.com/in/tyler-b-a700a1aa">
-        <span style="color: #CCCCCC;">
-            <i class="fab fa-linkedin fa-lg"></i></a>
-        </span>
-    
-    
-    
-        <a href="https://stackoverflow.com/users/story/12935605">
-        <span style="color: #CCCCCC;">
-            <i class="fab fa-stack-overflow fa-lg"></i></a>
-        </span>
-    
-    
-    
-        <a href="https://keybase.io/tbutler320">
-        <span style="color: #CCCCCC;">
-            <i class="fab fa-keybase"></i></a>
-        </span>
-     
-    <i> &nbsp;&nbsp; </i>
-</span>
-
-      </li>
-    </ul>
-  </div>
-</nav>
-
-    <div class="dumbarton-spacer-sm"></div>
-    <div class="container">
-      
-
-<!--  HELP TIPS SECTION  -->
-<!-- used only for develop mode, disable these in _config.yml with `help_tips: false` -->
-
-
-<!-- ABOUT ME SECTION -->
-<div class="card mx-auto border-0" style="position:relative;background-color:;">
-  <div class="row">
-    <div class="col-md-4">
-      
-        <img src="/assets/img/avatar/cropped.png" class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded" alt="...">
-      
-    </div>
-    <!-- EDUCATION SECTION -->
-    <div class="col-md-8">
-      
-      <div class="card-body animate__animated animate__fadeInRight" style="color:;">
-      
-        <p style="color:;"><h3 id="hi-im-dumbarton-">Hi, I’m Dumbarton 👋</h3>
-<p>Dumbarton is a Jekyll Theme developed by <a href="https://github.com/tcbutler320">Tyler Butler</a>. The theme is designed for academics and features a simple home page with an about me section and an interactive highlights section to describe publications, coursework, courses taught, and projects. You can checkout the project on <a href="https://github.com/tcbutler320/Jekyll-Theme-Dumbarton">Github</a>, feel free to make contributions and feature requests and don’t forget to give it a star.</p>
-
-<p><a href="/contact.html" class="highlighted">Contact Me</a></p>
-<p>
-        
-           
-  <h5 class="card-title" style="font-family:Noto Sans JP;font-size:18px;color:;">Education & Certifications</h5>
-  <ul class="list-unstyled">
-  
-    <li class="media">
-      <img src="/assets/img/icons/2x/princeton-crop.png" class="mr-3" alt="...">
-      <div class="media-body">
-        <h5 style="font-family:Noto Sans JP;font-size:18px;color:;">Princeton</h5>
-        <p style="font-family:Noto Sans JP;font-size:15px;color:;"><i>School of Public and International Affairs</i></p>
-        
-      </div>
-    </li>
-    
-  </ul>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- style="font-family:Poppins;background-color:#10292e; -->
-
-<!-- HOME HIGHLIGHTS SECTION --> 
-
-<div class="card mx-auto animate__animated animate__slideInUp animate__delay-1s glowing-border" style="max-width: 100%;">
-
-  <div class="card-header" style="background-color:#10292e;">
-    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
-      
-        
-          <li class="nav-item">
-            <a class="nav-link shadow-none" id="" href="#publications" role="tab" aria-controls="publications" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Publications</a>
-          </li>
-        
-      
-        
-          <li class="nav-item">
-              <a class="nav-link" id="" href="#courses" role="tab" aria-controls="courses" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Coursework</a>
-          </li>
-        
-      
-        
-          <li class="nav-item">
-              <a class="nav-link" id="" href="#teaching" role="tab" aria-controls="teaching" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Teaching</a>
-          </li>
-        
-      
-        
-          <li class="nav-item">
-              <a class="nav-link" id="" href="#projects" role="tab" aria-controls="projects" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Projects</a>
-          </li>
-        
-      
-    </ul>
-  </div>
-  <div class="card-body">          
-      <div class="tab-content mt-3">
-        
-          
-            
-              <div class="tab-pane active overflow-auto" id="publications" role="tabpanel">
-                <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
-                <p class="card-text"><ol class="bibliography"><li><div class="row">
-  <div id="einstein1950meaning" class="col-sm-8">
-    
-      <div class="title font-weight-bold">The meaning of relativity</div>
-      <div class="author">
-        
-          
-            
-              
-                
-                  Einstein, Albert,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  and Taub, AH
-                
-              
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>American Journal of Physics,</em>
-      
-      
-        1950
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-    
-    
-      
-      <a href="/assets/pdf/example.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      
-    
-    
-    
-    
-    
-    
-    
-    </div>
-
-    <!-- Hidden abstract block -->
-    
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="PhysRev.47.777" class="col-sm-8">
-    
-      <div class="title font-weight-bold">Can Quantum-Mechanical Description of Physical Reality Be Considered Complete?</div>
-      <div class="author">
-        
-          
-            
-              
-                
-                  Einstein, A.,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  Podolsky, B.,
-                
-              
-            
-          
-        
-          
-            
-              
-                
-                  and Rosen, N.
-                
-              
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>Phys. Rev.,</em>
-      
-      
-        1935
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-    
-    
-      
-      <a href="/assets/pdf/example.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      
-    
-    
-    
-    
-    
-    
-    
-    </div>
-
-    <!-- Hidden abstract block -->
-    
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="einstein1905molekularkinetischen" class="col-sm-8">
-    
-      <div class="title font-weight-bold">Über die von der molekularkinetischen Theorie der Wärme geforderte Bewegung von in ruhenden Flüssigkeiten suspendierten Teilchen</div>
-      <div class="author">
-        
-          
-            
-              Einstein, A.
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>Annalen der physik,</em>
-      
-      
-        1905
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-    
-    
-      
-      <a href="/assets/pdf/example.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      
-    
-    
-    
-    
-    
-    
-    
-    </div>
-
-    <!-- Hidden abstract block -->
-    
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="einstein1905movement" class="col-sm-8">
-    
-      <div class="title font-weight-bold">Un the movement of small particles suspended in statiunary liquids required by the molecular-kinetic theory 0f heat</div>
-      <div class="author">
-        
-          
-            
-              Einstein, A.
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em>Ann. Phys.,</em>
-      
-      
-        1905
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-    
-    
-      
-      <a href="/assets/pdf/example.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      
-    
-    
-    
-    
-    
-    
-    
-    </div>
-
-    <!-- Hidden abstract block -->
-    
-  </div>
-</div></li>
-<li><div class="row">
-  <div id="einstein1905electrodynamics" class="col-sm-8">
-    
-      <div class="title font-weight-bold">On the electrodynamics of moving bodies</div>
-      <div class="author">
-        
-          
-            
-              Einstein, A.
-            
-          
-        
-      </div>
-
-      <div class="periodical">
-      
-        <em></em>
-      
-      
-        1905
-      
-      </div>
-    
-
-    <div class="links">
-    
-    
-    
-      <a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.47.777" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-    
-    
-      
-      <a href="/assets/pdf/example.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
-      
-    
-    
-    
-    
-    
-    
-    
-    </div>
-
-    <!-- Hidden abstract block -->
-    
-  </div>
-</div></li></ol></p>
-              </div>
-            
-          
-        
-            
-            
-              <div class="tab-pane overflow-auto" id="courses" role="tabpanel" aria-labelledby="courses-tab">  
-                <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
-                <div class="list-group">
-                
-                  <button type="button" class="list-group-item text-left">POL 554 International Security Studies</button>
-                
-                  <button type="button" class="list-group-item text-left">POL 585 International Political Economy</button>
-                
-                </div>
-              </div>
-            
-          
-        
-            
-            
-              <div class="tab-pane overflow-auto" id="teaching" role="tabpanel" aria-labelledby="teaching-tab">  
-                <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
-                    
-                    <div class="list-group">
-                      <div class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1"></h5>
-                          <p>POL 240/SPI 312 International Relations</p>
-                          <small>08/30/2019 - 08/30/2020</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-                        <small></small>
-                      </div>
-                    </div>
-                    
-                    <div class="list-group">
-                      <div class="list-group-item list-group-item-action">
-                        <div class="d-flex w-100 justify-content-between">
-                          <h5 class="mb-1"></h5>
-                          <p>POL 380 Human Rights</p>
-                          <small>08/30/2019 - 08/30/2020</small>
-                        </div>
-                        <p class="mb-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-                        <small></small>
-                      </div>
-                    </div>
-                    
-              </div>
-            
-          
-        
-            
-            
-              <div class="tab-pane overflow-auto" id="projects" role="tabpanel" aria-labelledby="projects-tab">  
-                <p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</i></p>
-                  
-                  <div class="media mt-2">
-                    <a href="https://example.com"><img src="http://placehold.it/100x100" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
-                    <div class="media-body">
-                      <h5 class="mt-0"><a href="https://example.com" class="highlighted">Project 1</a></h5>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-
-                      
-                        <h6><mark><u>Technologies</u></mark></h6>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">python</span>
-                        
-                      
-                    </div>
-                  </div>
-                  
-                  <div class="media mt-2">
-                    <a href="https://example.com"><img src="http://placehold.it/100x100" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
-                    <div class="media-body">
-                      <h5 class="mt-0"><a href="https://example.com" class="highlighted">Project 2</a></h5>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
-
-                      
-                        <h6><mark><u>Technologies</u></mark></h6>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">c++</span>
-                        
-                      
-                    </div>
-                  </div>
-                  
-                  <div class="media mt-2">
-                    <a href="https://example.com"><img src="http://placehold.it/100x100" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
-                    <div class="media-body">
-                      <h5 class="mt-0"><a href="https://example.com" class="highlighted">Project 3</a></h5>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.   
-
-                      
-                        <h6><mark><u>Technologies</u></mark></h6>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">Java</span>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">Maven</span>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">Jenkins</span>
-                        
-                      
-                    </div>
-                  </div>
-                  
-                  <div class="media mt-2">
-                    <a href="https://example.com"><img src="http://placehold.it/100x100" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
-                    <div class="media-body">
-                      <h5 class="mt-0"><a href="https://example.com" class="highlighted">Project 4</a></h5>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 0
-
-                      
-                        <h6><mark><u>Technologies</u></mark></h6>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">Sonarcube</span>
-                        
-                        <span class="badge badge-secondary mr-1" style="background-color:Black;">Java</span>
-                        
-                      
-                    </div>
-                  </div>
-                  
-                </div>        
-              </div>
-            
-          
-        
-      </div>
-  </div>
+        <a href="/Alexis97.github.io/archive/">Archive</a>
 </div>
 
 
+        <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Shimian Zhang | Ph.D Student LPAC Penn State</title>
+<meta name="generator" content="Jekyll v4.3.0" />
+<meta property="og:title" content="Shimian Zhang" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Ph.D Student LPAC Penn State" />
+<meta property="og:description" content="Ph.D Student LPAC Penn State" />
+<link rel="canonical" href="http://localhost:4000/Alexis97.github.io/" />
+<meta property="og:url" content="http://localhost:4000/Alexis97.github.io/" />
+<meta property="og:site_name" content="Shimian Zhang" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Shimian Zhang" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Ph.D Student LPAC Penn State","headline":"Shimian Zhang","name":"Shimian Zhang","url":"http://localhost:4000/Alexis97.github.io/"}</script>
+<!-- End Jekyll SEO tag -->
 
-<!-- ANIMATE.JS ANIMATE LIBRARY
-<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
--->
+
+        <!-- Generated using https://favicon.io/ -->
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png?">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png?">
+<link rel="manifest" href=site.webmanifest">
 
 
-<!--JS FUNCTION FOR RECENT WORK SECTION -->
-<script>
-    $('#test-list a').on('click', function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-    })
-</script> 
+        <!-- MathJax -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
 
-<!-- OPTIONAL TOAST JS FUNCTION-->
-<script>
-    $(document).ready(function() {
-        $(".toast").toast("show");
-    });
+  <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+     processEscapes: true
+    }
+  });
 </script>
 
 
+        <!-- Load fontawesome here for faster loadtimes: https://stackoverflow.com/a/35880730/9523246 -->
+        <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://use.fontawesome.com/releases/v5.11.0/css/all.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    </head>
+
+    <body>
+        <main>
+            <article>
+                
+    
+      <img class="profile right" width="33.33%" src="/Alexis97.github.io/assets/images/shimian_2022.jpg">
+    
+
+
+<!-- ### About Me -->
+<p>I’m a second year CSE Ph.D. student at <a href="https://www.eecs.psu.edu/" target="_blank" rel="noopener noreferrer">the Pennsylvania State University</a> working in <a href="http://vision.cse.psu.edu" target="_blank" rel="noopener noreferrer">Lab for Perception, Action and Cognition (LPAC)</a> under <a href="https://www.cse.psu.edu/~yul11/" target="_blank" rel="noopener noreferrer">Dr. Yanxi Liu</a> and <a href="https://www.cse.psu.edu/~rtc12/" target="_blank" rel="noopener noreferrer">Dr. Robert Collins</a>. My primary research interests are: computational similarity based on human perception, recurring pattern discovery, and self-supervised learning.</p>
+
+<h3 id="my-background">My Background</h3>
+<p>Before coming Penn State, I obtained my B.S. in CSE at <a href="https://www.cs.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Shanghai Jiao Tong University</a> working in <a href="https://bcmi.sjtu.edu.cn/" target="_blank" rel="noopener noreferrer">Center for Brain-like Computing and Machine Intelligence (BCMI)</a> under <a href="https://bcmi.sjtu.edu.cn/~zhangliqing/" target="_blank" rel="noopener noreferrer">Dr. Liqing Zhang</a>. During that period of time, I also had an internship at <a href="https://www.versa-ai.com/" target="_blank" rel="noopener noreferrer">Shanghai Versa</a> where I learnt a lot about transfer learning and GAN-like models.</p>
+
+<h3 id="whats-new">What’s New</h3>
+<p>I’m currently working on Recurring Pattern research to demonstrate the utility of recurring pattern discovery from a single image for spatial understanding of a 3D scene. 
+I’ve developed a tool for crowd-sourcing recurring pattern labels using Amazon Mechanical Turk.</p>
+
+
+            </article>
+        </main>
+
+        <footer>
+          <p class="copy">
+            <small> © Shimian Zhang 2022
+                    | Powered by Jekyll and
+                    <a target="_blank" href="https://github.com/jitinnair1/gradfolio/" rel="noopener noreferrer">Gradfolio</a>.
+                    Last updated on 25 October 2022
+            </small>
+          </p>
+
+        <div class="rounded-social-buttons">
+<a title="" class="social-button email" itemprop="email" href="mailto:%73%76%7A%35%33%30%33@%70%73%75.%65%64%75" target="_blank">
+<i class="far fa-envelope"></i>
+</a><a title="" class="social-button github" href="https://www.github.com/Alexis97" itemprop="sameAs" target="_blank" rel="noopener noreferrer">
+<i class="fab fa-github"></i>
+</a>
+</div>
+
+
+        </footer>
+
+        <!-- Google Analytics Tracking code -->
+<script src="https://cdn.jsdelivr.net/npm/ga-lite@1/dist/ga-lite.min.js" async></script>
 <script>
-$('body').scrollspy({ target: '#list-example' })
+var galite = galite || {};
+galite.UA = '';
 </script>
 
-<script>
-$('.collapse').collapse()
-</script>
+    </body>
 
-<script>
-$('.show').show()
-</script>
-
-    </div>
-    <div class="dumbarton-spacer"></div>
-    <div class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
-    <p class="navbar-text pull-left">© 2020 - Theme Built By Tyler Butler, See it on
-        <a href="https://github.com/tcbutler320/Jekyll-Theme-Dumbarton" target="_blank" >GitHub</a>
-    </p>
-    <p class="navbar-text pull-right">
-            <!-- Displays Social Media Icons based on _config.yml settings -->
-
-<span style="color: Black;">
-     
-        <a class="social-link" href="https://twitter.com/tbutler0x90">
-        <span style="color: black;">
-            <i class="fab fa-twitter-square fa-lg"></i></a>
-        </span>
-    
-    
-        <a href="https://github.com/tcbutler320">
-        <span style="color: black;">
-            <i class="fab fa-github-square fa-lg"></i></a>
-        </span>
-    
-    
-        <a href="https://www.linkedin.com/in/tyler-b-a700a1aa">
-        <span style="color: black;">
-            <i class="fab fa-linkedin fa-lg"></i></a>
-        </span>
-    
-    
-    
-        <a href="https://stackoverflow.com/users/story/12935605">
-        <span style="color: black;">
-            <i class="fab fa-stack-overflow fa-lg"></i></a>
-        </span>
-    
-    
-    
-        <a href="https://keybase.io/tbutler320">
-        <span style="color: black;">
-            <i class="fab fa-keybase"></i></a>
-        </span>
-     
-    <i> &nbsp;&nbsp; </i>
-</span>
-
-    </p>
-  </div>
-</div> 
-
-<script>
-  $(function () {
-    $('[data-toggle="popover"]').popover()
-  })
-</script>
-  </body>
 </html>

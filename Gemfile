@@ -1,6 +1,12 @@
-source "https://rubygems.org"
-#gemspec
-gem 'jekyll'                    #Needed since this is a theme for Jekyll
-gem 'jekyll-feed'
-gem 'jekyll-scholar'
-gem 'jekyll-environment-variables'
+source 'https://rubygems.org'
+
+gem 'jekyll'
+
+group :jekyll_plugins do
+  gem 'jekyll-seo-tag'
+  gem 'jekyll-paginate'
+  gem 'jekyll-email-protect'
+  gem 'jekyll-target-blank'
+end
+
+gem "webrick", "~> 1.7"
