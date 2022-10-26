@@ -1,12 +1,12 @@
 - name: hongyan
-  title: 鸿雁
+  title: Swan goose (鸿雁), a Mongolian folk song
   domain: dongxiao
   audio_url: /assets/music/鸿雁.m4a
   image_url: /assets/images/hongyan.jpg
   date: 2022-09-02
 
 - name: qilixiang
-  title: 七里香 (Common Jasmin Orange) 
+  title: Common Jasmin Orange (七里香) 
   domain: songs
   audio_url: /assets/music/七里香.m4a
   image_url: /assets/images/七里香.jpg

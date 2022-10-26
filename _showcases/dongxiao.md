@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 洞箫 (Dong Xiao)
+title: Dong Xiao (洞箫)
 description: Dong Xiao, a.k.a Chinese Phoenix Flute
 ---
-洞箫 (Dong Xiao) is a Chinese traditional musical instrument, a.k.a Chinese Phoenix Flute. I learned how to play Dong Xiao in the Summer of 2021 under [罗守诚 (LUO Shou Cheng)](https://baike.baidu.com/item/%E7%BD%97%E5%AE%88%E8%AF%9A/9894928). [Link to one of Master's work on youtube](https://www.youtube.com/watch?v=wI69SPSCruU).
+Dong Xiao (洞箫) is a Chinese traditional musical instrument, a.k.a Chinese Phoenix Flute. I learned how to play Dong Xiao in the Summer of 2021 under [LUO Shou Cheng (罗守诚)](https://baike.baidu.com/item/%E7%BD%97%E5%AE%88%E8%AF%9A/9894928). [Link to one of Master's work on youtube](https://www.youtube.com/watch?v=wI69SPSCruU).
 
 ![Dong Xiao](/assets/images/dongxiao.png)
 

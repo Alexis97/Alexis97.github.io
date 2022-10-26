@@ -1,9 +1,9 @@
 ---
 layout: post
-title: My Songs
-description: Some covered songs I recorded
+title: My Cover Songs
+description: Some songs I've recorded
 ---
-I love singing during rest. Here are some songs I covered.
+I love singing during rest time. Here are the collection of some songs I've recorded. Hope you like them!
 
 <div >
         {% for item in site.data.showcase %}
