@@ -48,7 +48,8 @@ collections:
     output: true
     permalink: /showcases/:name/
     order:
-      - mymusic.md
+      - songs.md
+      - dongxiao.md
 
   projects:
     output: true
@@ -73,3 +74,8 @@ plugins:
   - jekyll-target-blank
 
 destination: docs/
+
+scholar:
+  bibliography_template: bib
+  sort_by: year,month
+  order: ascending
