@@ -18,3 +18,10 @@
   audio_url: /assets/music/风中奇缘.m4a
   image_url: /assets/images/风中奇缘.jpg
   date: 2022-02-08
+
+- name: tanglijianxue
+  title: 棠梨煎雪
+  domain: songs
+  audio_url: /assets/music/棠梨煎雪.m4a
+  image_url: /assets/images/棠梨煎雪.jpg
+  date: 2022-12-16
